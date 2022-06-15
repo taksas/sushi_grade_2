@@ -4,6 +4,8 @@ import random
 import glob
 import os
 
+# 各要素20枚以上ある寿司ネタに対して、ランダムに20枚を選ぶ
+
 def erb(neta, nedan):
   os.makedirs('./20_erb_sushi/' + neta + '/' + nedan, exist_ok=True)
   image_list = glob.glob('./erb_sushi/' + neta + '/' + nedan + '/*')
