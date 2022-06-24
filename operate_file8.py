@@ -18,8 +18,8 @@ import re
 list = [[0] * 82 for i in range(2)]
 
 def erb(neta, nedan):
-  os.makedirs('./esushi_sub_r/' + neta + '/' + nedan, exist_ok=True)
-  image_list = glob.glob('./esushi_sub/' + neta + '/' + nedan + '/*')
+  os.makedirs('./5_repeat_erb_sushi_r/' + neta + '/' + nedan, exist_ok=True)
+  image_list = glob.glob('./repeat_erb_sushi_sub/' + neta + '/' + nedan + '/*')
   print(image_list)
   num = 0
   for path in image_list:
@@ -29,11 +29,11 @@ def erb(neta, nedan):
 # サイズ変更
 def rename_image(pic,neta,nedan,num):
     # ファイル名の変更 
-    os.rename(pic, './esushi_sub_r/' + neta + '/' + nedan + '/' + str(num) + '.jpg') 
+    os.rename(pic, './5_repeat_erb_sushi_r/' + neta + '/' + nedan + '/' + str(num) + '.jpg') 
 
 
 if __name__ == '__main__':
-    erb("5", "0")
+
     erb("6", "0")
     erb("17", "0")
 
@@ -42,11 +42,11 @@ if __name__ == '__main__':
     erb("27", "0")
 
     erb("41", "0")
-    erb("44", "0")
+
     erb("81", "0")
 
 
-    erb("5", "1")
+
     erb("6", "1")
     erb("17", "1")
 
@@ -55,5 +55,5 @@ if __name__ == '__main__':
     erb("27", "1")
 
     erb("41", "1")
-    erb("44", "1")
+
     erb("81", "1")

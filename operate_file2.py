@@ -4,21 +4,21 @@ import random
 import glob
 import os
 
-# 各要素20枚以上ある寿司ネタに対して、ランダムに20枚を選ぶ
+# 各要素15枚以上ある寿司ネタに対して、ランダムに15枚を選ぶ
 
 def erb(neta, nedan):
-  os.makedirs('./20_erb_sushi/' + neta + '/' + nedan, exist_ok=True)
-  image_list = glob.glob('./erb_sushi/' + neta + '/' + nedan + '/*')
+  os.makedirs('./15_repeat_erb_sushi/' + neta + '/' + nedan, exist_ok=True)
+  image_list = glob.glob('./repeat_erb_sushi/' + neta + '/' + nedan + '/*')
   print(image_list)
   random.shuffle(image_list)
   print(image_list)
-  for t in range(20):
-      shutil.copy(str(image_list[t]), './20_erb_sushi/' + neta + '/' + nedan + '/')
+  for t in range(15):
+      shutil.copy(str(image_list[t]), './15_repeat_erb_sushi/' + neta + '/' + nedan + '/')
 
 
 
 if __name__ == '__main__':
-    erb("5", "0")
+
     erb("6", "0")
     erb("17", "0")
 
@@ -27,11 +27,11 @@ if __name__ == '__main__':
     erb("27", "0")
 
     erb("41", "0")
-    erb("44", "0")
+
     erb("81", "0")
 
 
-    erb("5", "1")
+
     erb("6", "1")
     erb("17", "1")
 
@@ -40,5 +40,5 @@ if __name__ == '__main__':
     erb("27", "1")
 
     erb("41", "1")
-    erb("44", "1")
+
     erb("81", "1")
