@@ -39,7 +39,7 @@ def gaussian_image(pic):
 
     image = cv2.imread(pic)
     # 奇数じゃないといけない
-    image_gau =  cv2.GaussianBlur(image, (15, 15), 0)
+    image_gau =  cv2.GaussianBlur(image, (7, 7), 0)
 
     cv2.imwrite(output, image_gau)
 
@@ -48,7 +48,7 @@ def mosaic_image(pic):
     output = pic.replace('sushi_resize_m', 'sushi_mosaic_m')
 
     image = cv2.imread(pic)
-    image_small = cv2.resize(image, None, fx=0.1, fy=0.1, interpolation=cv2.INTER_NEAREST)
+    image_small = cv2.resize(image, None, fx=0.3, fy=0.3, interpolation=cv2.INTER_NEAREST)
     image_masaic = cv2.resize(image_small, image.shape[:2][::-1], interpolation=cv2.INTER_NEAREST)
 
     cv2.imwrite(output, image_masaic)
